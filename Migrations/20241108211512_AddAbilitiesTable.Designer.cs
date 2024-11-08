@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using W9_assignment_template.Data;
 
@@ -10,9 +11,10 @@ using W9_assignment_template.Data;
 namespace W9_assignment_template.Migrations
 {
     [DbContext(typeof(GameContext))]
-    partial class GameContextModelSnapshot : ModelSnapshot
+    [Migration("20241108211512_AddAbilitiesTable")]
+    partial class AddAbilitiesTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -58,7 +60,7 @@ namespace W9_assignment_template.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Abilities", (string)null);
+                    b.ToTable("Abilities");
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("Ability");
                 });
@@ -89,7 +91,7 @@ namespace W9_assignment_template.Migrations
 
                     b.HasIndex("RoomId");
 
-                    b.ToTable("Characters", (string)null);
+                    b.ToTable("Characters");
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("Character");
                 });
@@ -112,7 +114,7 @@ namespace W9_assignment_template.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Rooms", (string)null);
+                    b.ToTable("Rooms");
                 });
 
             modelBuilder.Entity("W9_assignment_template.Models.ClawSlashAbility", b =>

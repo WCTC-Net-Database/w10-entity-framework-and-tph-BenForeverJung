@@ -10,6 +10,7 @@ public class Menu
     public Menu(GameContext gameContext)
     {
         _gameContext = gameContext;
+
     }
 
     public void Show()

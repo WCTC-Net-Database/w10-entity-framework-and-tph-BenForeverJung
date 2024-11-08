@@ -18,6 +18,7 @@ namespace W9_assignment_template.Migrations
             // Disable identity insert for Rooms
             migrationBuilder.Sql("SET IDENTITY_INSERT Rooms OFF");
 
+
             // Enable identity insert for Characters
             migrationBuilder.Sql("SET IDENTITY_INSERT Characters ON");
 
